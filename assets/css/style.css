@@ -119,6 +119,9 @@ header nav ul li a:hover {
 }
 
 /*about me */
+p {
+  color: var(--primary-color);
+}
 
 /*work grid*/
 .grid-container {
@@ -148,6 +151,23 @@ header nav ul li a:hover {
   padding: 8px;
   margin-left: 5px;
   border-radius: 12px;
+  z-index: 999;
+}
+
+.grid-element::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: var(--tertiary-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.grid-element:hover::after {
+  opacity: 0;
 }
 
 .grid-element:nth-child(1) {
@@ -181,6 +201,7 @@ header nav ul li a:hover {
   font-weight: bolder;
   font-size: 25px;
   color: var(--highlight-color);
+  flex-wrap: wrap;
 }
 
 .section-element ul li {
@@ -197,11 +218,24 @@ header nav ul li a:hover {
 /*MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 980px) {
   .grid-container {
-    grid-template-columns: 200px 200px;
+    grid-template-columns: 150px 150px;
     grid-template-rows: 150px 150px 150px 150px;
   }
 
   header {
     justify-content: space-evenly;
+  }
+
+  .section-header {
+    justify-content: space-evenly;
+    text-align: center;
+  }
+
+  .section-element {
+    border: none;
+  }
+
+  .grid-element::after {
+    opacity: 0;
   }
 }
