@@ -172,10 +172,36 @@ header nav ul li a:hover {
   background-image: url(../images/surf-report.jpeg);
 }
 
+/*contact me*/
+.section-element ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px 10px;
+  font-weight: bolder;
+  font-size: 25px;
+  color: var(--highlight-color);
+}
+
+.section-element ul li {
+  margin: 10px;
+  border-bottom: 2px solid currentColor;
+}
+
+.section-element ul li a {
+  text-decoration: none;
+  color: var(--highlight-color);
+}
+        
+
 /*MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 980px) {
   .grid-container {
     grid-template-columns: 200px 200px;
     grid-template-rows: 150px 150px 150px 150px;
+  }
+
+  header {
+    justify-content: space-evenly;
   }
 }
