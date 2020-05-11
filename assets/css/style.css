@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #3D630F;
-  --secondary-color: #B0D68F;
-  --tertiary-color: #709643;
+  --primary-color: #3D635A;
+  --secondary-color: #709664;
+  --tertiary-color: #B0D6AE;
   --highlight-color: #BD6C22;
   --background-color: #A8A9A4;
 }
@@ -10,4 +10,84 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  background: var(--background-color);
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/*header*/
+header {
+  padding: 20px 35px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: var(--primary-color);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 80%;
+}
+
+header h1 {
+  font-weight: bold;
+  font-size: 36px;
+  color: var(--highlight-color);
+  margin: 0;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--highlight-color);
+}
+
+header nav {
+  margin: 7px 0;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+header nav ul li a {
+  padding: 5px 10px;
+  margin: 0 10px 0 10px;
+  font-weight: bolder;
+  font-size: 25px;
+  border-bottom: 2px solid currentColor;
+}
+
+header nav ul li a:hover {
+  background: var(--highlight-color);
+  color: var(--tertiary-color);
+  border-radius: 12px;
+  text-shadow: none;
+}
+
+/*hero*/
+.hero {
+  background-image: url(../images/green-pine-trees-5.jpg);
+  background-size:  100%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-position: 80%;
+  padding: 15%;
+  position: relative;
+}
+
+.hero h2 {
+  background: var(--primary-color);
+  color: var(--highlight-color);
+  font-size: 18px;
+  position: absolute;
+  bottom: 15px;
+  right: 45px;
+  padding: 1%;
+  border-radius: 12px;
 }
