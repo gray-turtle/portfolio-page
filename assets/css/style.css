@@ -1,0 +1,241 @@
+:root {
+  --primary-color: #3D635A;
+  --secondary-color: #709664;
+  --tertiary-color: #B0D6AE;
+  --highlight-color: #BD6C22;
+  --background-color: #A8A9A4;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background-color);
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*header*/
+header {
+  padding: 20px 35px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: var(--primary-color);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 80%;
+}
+
+header h1 {
+  font-weight: bold;
+  font-size: 36px;
+  color: var(--highlight-color);
+  margin: 0;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--highlight-color);
+}
+
+header nav {
+  margin: 7px 0;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+header nav ul li a {
+  padding: 5px 10px;
+  margin: 0 10px 0 10px;
+  font-weight: bolder;
+  font-size: 25px;
+  border-bottom: 2px solid currentColor;
+}
+
+header nav ul li a:hover {
+  background: var(--highlight-color);
+  color: var(--tertiary-color);
+  border-radius: 12px;
+  text-shadow: none;
+}
+
+/*hero*/
+.hero {
+  background-image: url(../images/green-pine-trees-5.jpg);
+  background-size:  100%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-position: 80%;
+  padding: 15%;
+  position: relative;
+}
+
+.hero h2 {
+  background: var(--primary-color);
+  color: var(--highlight-color);
+  font-size: 18px;
+  position: absolute;
+  bottom: 15px;
+  right: 45px;
+  padding: 1%;
+  border-radius: 12px;
+}
+
+/*article headers*/
+.standard-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.section-header {
+  color: var(--highlight-color);
+  padding: 5px 10px 100px 10px;
+  align-items: center;
+  width: 15%;
+  text-align: right;
+  flex-wrap: wrap;
+}
+
+.section-element {
+  border-left: solid 2px var(--highlight-color);
+  padding: 30px;
+  width: 85%;
+}
+
+/*about me */
+p {
+  color: var(--primary-color);
+}
+
+/*work grid*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  grid-template-rows: 150px 150px 150px;
+  justify-content: flex-start;
+  margin: 10px 100px 10px 10px;
+  padding: 20px;
+  grid-gap: 20px 20px;
+}
+
+.grid-element {
+  background-repeat: no-repeat;
+  width: 100%;
+  position: relative;
+  background-size: cover;
+  border: 5px solid var(--tertiary-color);
+}
+
+.grid-element a {
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 5px;
+  color: var(--highlight-color);
+  font-weight: bold;
+  padding: 8px;
+  margin-left: 5px;
+  border-radius: 12px;
+  z-index: 999;
+}
+
+.grid-element::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: var(--tertiary-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.grid-element:hover::after {
+  opacity: 0;
+}
+
+.grid-element:nth-child(1) {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  background-image: url(../images/run-buddy.png);
+}
+
+.grid-element:nth-child(2) {
+  background-image: url(../images/calculator.jpg);
+}
+
+.grid-element:nth-child(3) {
+  background-image: url(../images/led-wall.png);
+}
+
+.grid-element:nth-child(4) {
+  background-image: url(../images/pastel.jpg);
+}
+
+.grid-element:nth-child(5) {
+  background-image: url(../images/surf-report.jpeg);
+}
+
+/*contact me*/
+.section-element ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px 10px;
+  font-weight: bolder;
+  font-size: 25px;
+  color: var(--highlight-color);
+  flex-wrap: wrap;
+}
+
+.section-element ul li {
+  margin: 10px;
+  border-bottom: 2px solid currentColor;
+}
+
+.section-element ul li a {
+  text-decoration: none;
+  color: var(--highlight-color);
+}
+        
+
+/*MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 980px) {
+  .grid-container {
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 150px 150px 150px 150px;
+  }
+
+  header {
+    justify-content: space-evenly;
+  }
+
+  .section-header {
+    justify-content: space-evenly;
+    text-align: center;
+  }
+
+  .section-element {
+    border: none;
+  }
+
+  .grid-element::after {
+    opacity: 0;
+  }
+}
